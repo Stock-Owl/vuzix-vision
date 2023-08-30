@@ -1,0 +1,49 @@
+A szemüvegen vannak gombok, amivel lehet kiválasztani és menüben lépkedni
+Van vonalkódolvasó és lehet hangot lejátszani. Van benne beszédfelismerés és beszéddé alakítás magyarul is! 
+A szemüvegen natív androidos alkalmazást lehet fejleszteni.
+Mi legyen a fejlesztőeszköz? 
+Az android-os alkalmazás nem fogja közvetlenül az adatbázist elérni, hanem egy interfészen keresztül fog kommunikálni.
+Legyen erre is tapasztalatunk és sokkal biztonságosabb, egyszerűbb.
+
+Első körben csak gyalogos szedést fogunk a szemüveggel végezni.
+1. Felhasználó belép a szemüvegen (vonalkóddal azonosítja magát)
+2. Megnézi a rendszer van-e újabb verzió, ha igen frissít.
+3. Megadhatja melyik szektorban van és szedést kérhet (???)
+
+4.0 Kiírjuk milyen szedési eszközt vigyen magával és hány tétel/kg/m3 és a vevőt, ha van.
+4.1 Ha nem gyűjtőszedés, akkor bekérjük a szedési eszköz azonosítóját (vonalkódját kell leolvasni)
+
+5.0 Feldobjuk az első tételt (tárhely, cikkszám, cikknév, mennyiség, megjegyzés)
+5.1 a szemüvegen, ha vonalkódra néz, akkor zölddel jelezzük, hogy azt a terméket kell kiszedni és bemondjuk a hangszórón a mennyiséget
+5.2 Bemondja a kiszedett mennyiséget.
+5.3 Ha kevesebbet mond, akkor rákérdezünk, hogy a különbség hiány és ezt vissza kell igazolnia gombokkal. (???)
+5.4 Amennyiben szortírozva szedés, akkor bemondjuk, hogy melyik ládába kell betennie, amit kivilágítunk (ha már van ilyenünk) vagy le kell olvasnia a vonalkódot.
+
+6. Jöhet a következő tétel 
+7. A végén feldobjuk ahogy az rf-en is az összesítést és gombbal tudja zárni az egész szedést (amire nyomtatunk vagy bármit csinálunk) (???)(rf)
+
+ 
+
+Nem tud
+Kihagyni tételt? (???)
+
+KELL:
+Bejelentkezés, authentikálás (gépnevet kéne tudni azonosítani). Visszakap egy session azonosítót, amit minden kérésnél át kell adni. (??? gépnév == Device ID | MAC ???)
+Szektor lista visszaadás (???)
+Következő szedés kérés (sessionid, szektorid-t átadja és megkapja a ku azonosítót, térfogat, tömeg, kiszedési eszköz, tételszám. Normál/szortírozva szedés)
+Szedési eszköz megadása (Sessionid, kuid, eszköz vonalkódja).
+Adott ku-ból a következő tétel lekérése (tszam, Rakhelykód, Cikkszám, cikknév, mennyiség, me, ean kódok listája. (??? ean, ku)
+Adott tétel kiszedve (kuid,tszam, állapot, szedési eszköz azonosító, (kiszedve, kihagyás?)
+Szedés lezárás
+
+ 
+
+Nyári pilot projekt
+Hogy lehet elérni az eszköz vonalkódolvasóját?
+Hogyan lehet számokat bemondani a hangszórón?
+Hogy lehet megoldani, hogy adott vonalkód halmazból felismerjen vonalkódokat és a kameraképben zölddel jelezze?
+Hogyan lehet a viselő által bemondott számokat felismertetni magyarul?
+Milyen API elérést lehet egyszerűen megoldani (REST?)
+Hogyan jó authentikációt megoldani (tanúsítványt lehet telepíteni a szemüvegre?)
+Gombok programozása hogyan oldható meg?
+Hogyan lehet verziót váltani? (??? program vagy OS?)
